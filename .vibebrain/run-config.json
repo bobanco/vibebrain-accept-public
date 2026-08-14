@@ -1,0 +1,27 @@
+{
+  "version" : 1,
+  "preparations" : [ ],
+  "workflows" : [ {
+    "id" : "static-web",
+    "targetKind" : "WEB_FRONTEND",
+    "sourceRoot" : ".",
+    "dev" : {
+      "command" : "python -m http.server 4173 --bind 0.0.0.0",
+      "workingDirectory" : ".",
+      "environment" : [ ]
+    },
+    "waitForPort" : 4173,
+    "requiredEnv" : [ ],
+    "requiredFileDeliverables" : [ ],
+    "verification" : [ {
+      "kind" : "visual",
+      "path" : "/",
+      "viewport" : {
+        "width" : 1280,
+        "height" : 720
+      },
+      "accessRequirement" : "PUBLIC"
+    } ],
+    "dependsOn" : [ ]
+  } ]
+}
